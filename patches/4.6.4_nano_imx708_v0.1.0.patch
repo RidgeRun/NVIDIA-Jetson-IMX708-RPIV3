@@ -298,7 +298,6 @@ Date:   Wed Jul 5 18:23:04 2023 +0000
  .../tegra210-p3448-0003-p3542-0000.dts        |   1 +
  .../tegra210-camera-rbpcv3-imx708.dtsi        | 166 ++++
  .../tegra210-porg-camera-rbpcv3-imx708.dtsi   |  41 +
- .../arch/arm64/configs/tegra_defconfig        |  13 +-
  kernel/nvidia/drivers/media/i2c/Kconfig       |   9 +
  kernel/nvidia/drivers/media/i2c/Makefile      |   1 +
  kernel/nvidia/drivers/media/i2c/imx708.c      | 774 ++++++++++++++++++
@@ -542,30 +541,6 @@ index 000000000..581ebe406
 +		};
 +	};
 +};
-diff --git a/kernel/kernel-4.9/arch/arm64/configs/tegra_defconfig b/kernel/kernel-4.9/arch/arm64/configs/tegra_defconfig
-index 8ab7fb986..41d3e5fa5 100644
---- a/kernel/kernel-4.9/arch/arm64/configs/tegra_defconfig
-+++ b/kernel/kernel-4.9/arch/arm64/configs/tegra_defconfig
-@@ -758,12 +758,13 @@ CONFIG_VIDEO_VIVID=m
- CONFIG_VIDEO_CAMERA=y
- CONFIG_VIDEO_TEGRA_VIVID=m
- # CONFIG_MEDIA_SUBDRV_AUTOSELECT is not set
--CONFIG_VIDEO_IMX185=m
--CONFIG_VIDEO_IMX477=y
--CONFIG_VIDEO_IMX219=y
--CONFIG_VIDEO_IMX268=y
--CONFIG_VIDEO_IMX274=m
--CONFIG_VIDEO_IMX318=y
-+CONFIG_VIDEO_IMX185=n
-+CONFIG_VIDEO_IMX477=n
-+CONFIG_VIDEO_IMX219=n
-+CONFIG_VIDEO_IMX268=n
-+CONFIG_VIDEO_IMX274=n
-+CONFIG_VIDEO_IMX318=n
-+CONFIG_VIDEO_IMX708=y
- CONFIG_VIDEO_LC898212=y
- CONFIG_VIDEO_OV5693=m
- CONFIG_VIDEO_OV9281=y
 diff --git a/kernel/nvidia/drivers/media/i2c/Kconfig b/kernel/nvidia/drivers/media/i2c/Kconfig
 index 326dbb096..99398a22c 100644
 --- a/kernel/nvidia/drivers/media/i2c/Kconfig
