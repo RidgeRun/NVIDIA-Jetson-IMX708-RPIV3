@@ -109,7 +109,7 @@ gst-launch-1.0 -e nvarguscamerasrc num-buffers=$NUMBER_OF_SNAPSHOTS sensor-id=$S
 
 ## RidgeRun
 
-Check our other products in [ridgerun.com](ridgerun.com) and don't hesitate to contact us if you have any kind of problem with the instructions given by reaching us at https://www.ridgerun.com/contact
+Check our other products in [https://www.ridgerun.com](ridgerun.com) and don't hesitate to contact us if you have any kind of problem with the instructions given by reaching us at https://www.ridgerun.com/contact
 
 
 
