@@ -11,11 +11,13 @@ In this repository you will find the following structure:
 ```
 .
 ├── patches_orin_nano
-│   ├── 5.1.1_orin_nano_imx708-v0.1.0.patch
-│   └── series
+|   └── patches
+│       ├── 5.1.1_orin_nano_imx708-v0.1.0.patch
+│       └── series
 ├── patches_nano
-│   ├── 4.6.2_nano_imx708-v0.1.0.patch
-│   └── series
+|   └── patches
+│       ├── 4.6.2_nano_imx708-v0.1.0.patch
+│       └── series
 └── README.md
 ```
 where:
@@ -41,13 +43,21 @@ This is the easiest and fastest way to install the driver. In order to install t
 
 ### OPTION B: Applying the patches on the sources
 
-In order to apply the patch on the JetPack sources with Xavier NX and Nano support, you must perform the following instructions:
-
-* [Install required software] (https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Install_required_software)
-* [JetPack sources download instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Download_the_JetPack_sources)
-* [Patch instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Patch_instructions)
-* [Kernel build instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Kernel_build_instructions)
-* [Flash the Jetson](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Flash_the_Jetson)
+In order to apply the patch on the JetPack sources with Orin Nano and Nano support, you must perform the following instructions:
+## For Jetson Orin Nano ##
+* [Install required software] (https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Install_dependencies)
+* [JetPack sources download instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Get_the_source_code_from_NVIDIA_oficial_repository)
+* [Patch instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Get_the_driver_patches)
+* [Setup toolchain](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Set_up_the_toolchain)
+* [Kernel build instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Build)
+* [Flash the Jetson](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Installation_options)
+## For Jetson Nano ##
+* [Install required software] (https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Install_dependencies)
+* [JetPack sources download instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Get_the_source_code_from_NVIDIA_oficial_repository)
+* [Patch instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Get_the_driver_patches_2)
+* [Setup toolchain](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Set_up_the_toolchain_2)
+* [Kernel build instructions](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Build_2)
+* [Flash the Jetson](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Installation_options_2)
 
 ## Supported features
 
