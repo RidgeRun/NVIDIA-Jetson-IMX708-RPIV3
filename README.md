@@ -16,14 +16,14 @@ In this repository you will find the following structure:
 │       └── series
 ├── patches_nano
 |   └── patches
-│       ├── 4.6.2_nano_imx708-v0.1.0.patch
+│       ├── 4.6.4_nano_imx708-v0.1.0.patch
 │       └── series
 └── README.md
 ```
 where:
 
 * `5.1.1_*_imx708-v0.1.0.patch` is the patch to be applied on the JetPack 5.1.1 sources in order to add support for the IMX708 camera sensor in the Jetson Orin Nano.
-* `series` is a file containing the patch name in order to apply it by using the quilt tool. The same applies to '4.6.2_nano_imx708-v0.1.0.patch'.
+* `series` is a file containing the patch name in order to apply it by using the quilt tool. The same applies to '4.6.4_nano_imx708-v0.1.0.patch'.
 
 ## JetPack installation instructions
 
