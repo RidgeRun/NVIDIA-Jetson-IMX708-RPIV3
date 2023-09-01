@@ -407,7 +407,7 @@ index 000000000..6b864e9f7
 +		i2c_0:i2c@0 {
 +			imx708_cam0: rpicam3_imx708_a@1a {
 +				status = "okay";
-+				compatible = "sony,imx708";
++				compatible = "ridgerun,imx708";
 +				reg = <0x1a>;
 +				devnode = "video0";
 +				physical_w = "3.680";
@@ -610,7 +610,7 @@ index 01f41c8d0..a3644b868 100644
  				};
  			};
 +
-+			rbpcv3_imx708_a@1a {
++			rpicam3_imx708_a@1a {
 +				mode0 {
 +					tegra_sinterface = "serial_b";
 +					lane_polarity = "6";
@@ -1002,7 +1002,7 @@ index 000000000..c33fc24b5
 +#include "imx708_mode_tbls.h"
 +
 +static const struct of_device_id imx708_of_match[] = {
-+	{.compatible = "sony,imx708",},
++	{.compatible = "ridgerun,imx708",},
 +	{},
 +};
 +
