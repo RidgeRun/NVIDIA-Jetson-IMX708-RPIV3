@@ -1,61 +1,40 @@
-From a6ce608cce8613f78da7478108436a34877d085f Mon Sep 17 00:00:00 2001
+From 1b8a980db1ae1877fbe0c1e4806d7154ae505d35 Mon Sep 17 00:00:00 2001
 From: alfredpchacon <mac.pinnock@ridgerun.com>
-Date: Tue, 25 Jul 2023 20:56:08 -0600
+Date: Tue, 5 Sep 2023 20:34:51 -0600
 Subject: [PATCH] Squashed commit of the following:
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-commit a6505a8f8eabdddecd81201a38dd4bf1dd18ae93
-Merge: cee0d5b7e 8386da7eb
-Author: Mac Alfred Pinnock Chacón <mac.pinnock@ridgerun.com>
-Date:   Tue Jul 25 22:00:38 2023 +0000
-
-    Merge branch 'hotfix/5.1.1/nano/imx708-changes-for-release' into '5.1.1/nano/imx708'
-
-    Hotfix/5.1.1/nano/imx708 changes for release
-
-    See merge request ridgerun/drivers/jetson/orin-drivers!8
-
-commit 8386da7eb042d518ee25760840374ad4d711d0c3
+commit 002257de66c7cf876faf5f0c3bb45e05c7a1c0fb
 Author: alfredpchacon <mac.pinnock@ridgerun.com>
 Date:   Tue Jul 25 14:27:47 2023 -0600
 
     Changes from Nano implementation
 
-commit 4b1b54b7ae5632430594f341462a9c0b796bb67d
+commit 08f0edee86f8d6855c8248de23eef42d9ad636bd
 Author: alfredpchacon <mac.pinnock@ridgerun.com>
 Date:   Wed Jul 19 20:45:08 2023 -0600
 
     Remove trashy code
 
-commit cee0d5b7e5c7e798523485ea25bda908b6b8d1d2
-Merge: 3a8e86b05 4bec2ab3c
-Author: Mac Alfred Pinnock Chacón <mac.pinnock@ridgerun.com>
-Date:   Mon Jul 17 23:42:06 2023 +0000
-
-    Merge branch 'hotfix/5.1.1/nano/imx708-duplicated-copyright' into '5.1.1/nano/imx708'
-
-    Fix duplicated copyright
-
-    See merge request ridgerun/drivers/jetson/orin-drivers!7
-
-commit 4bec2ab3cf834f0cdce2806286953ed153f09289
+commit fc25f3508cac71da0ce7bb7f4215c890a955aa33
 Author: Mac Alfred Pinnock Chacón <mac.pinnock@ridgerun.com>
 Date:   Mon Jul 17 23:39:08 2023 +0000
 
     Fix duplicated copyright
 
-commit 3a8e86b05b3f14b085cbbafe719d6e2e79544852
-Merge: f5e14f6bd fb8039235
-Author: Mac Alfred Pinnock Chacón <mac.pinnock@ridgerun.com>
-Date:   Sat Jul 1 19:11:10 2023 +0000
+commit 4cfae7c5b2c2284a4a26ecbcc2ca4889f04635de
+Author: alfredpchacon <mac.pinnock@ridgerun.com>
+Date:   Mon Sep 4 20:51:16 2023 -0600
 
-    Merge branch '5.1.1/nano/imx708-dev' into '5.1.1/nano/imx708'
+    Change compatibles
 
-    5.1.1/nano/imx708 dev
+commit bdce0b2d6d8fe5275a072915bb7479e40e4cbe97
+Author: alfredpchacon <mac.pinnock@ridgerun.com>
+Date:   Mon Sep 4 14:43:47 2023 -0600
 
-    See merge request ridgerun/drivers/jetson/orin-drivers!5
+    Fix dual capture
 
 commit fb8039235a1ec03af1e10479ca714452a8a69b21
 Author: Mac Alfred Pinnock Chacón <mac.pinnock@ridgerun.com>
@@ -300,7 +279,7 @@ Date:   Thu Jun 1 20:07:24 2023 -0600
 
 diff --git a/hardware/nvidia/platform/t23x/p3768/kernel-dts/cvb/tegra234-camera-rpicam3-imx708.dtsi b/hardware/nvidia/platform/t23x/p3768/kernel-dts/cvb/tegra234-camera-rpicam3-imx708.dtsi
 new file mode 100644
-index 000000000..6b864e9f7
+index 000000000..c05c1022e
 --- /dev/null
 +++ b/hardware/nvidia/platform/t23x/p3768/kernel-dts/cvb/tegra234-camera-rpicam3-imx708.dtsi
 @@ -0,0 +1,277 @@
@@ -474,7 +453,7 @@ index 000000000..6b864e9f7
 +		i2c_1: i2c@1 {
 +			imx708_cam1: rpicam3_imx708_c@1a {
 +				status = "okay";
-+				compatible = "ridgerun,imx708";
++				compatible = "sony,imx708";
 +				reg = <0x1a>;
 +				devnode = "video1";
 +				physical_w = "3.680";
@@ -594,7 +573,7 @@ index b6f1047d2..daf32c0c9 100644
  #include "tegra234-p3768-camera-rbpcv2-imx219.dtsi"
  
 diff --git a/hardware/nvidia/platform/t23x/p3768/kernel-dts/cvb/tegra234-p3768-0000-a0.dtsi b/hardware/nvidia/platform/t23x/p3768/kernel-dts/cvb/tegra234-p3768-0000-a0.dtsi
-index 01f41c8d0..a3644b868 100644
+index 01f41c8d0..f81570d42 100644
 --- a/hardware/nvidia/platform/t23x/p3768/kernel-dts/cvb/tegra234-p3768-0000-a0.dtsi
 +++ b/hardware/nvidia/platform/t23x/p3768/kernel-dts/cvb/tegra234-p3768-0000-a0.dtsi
 @@ -18,6 +18,7 @@
@@ -610,7 +589,7 @@ index 01f41c8d0..a3644b868 100644
  				};
  			};
 +
-+			rbpcv3_imx708_a@1a {
++			rpicam3_imx708_a@1a {
 +				mode0 {
 +					tegra_sinterface = "serial_b";
 +					lane_polarity = "6";
@@ -1806,5 +1785,4 @@ index 000000000..fb888d691
 +#endif /* __IMX708_H__ */
 -- 
 2.34.1
-
 
