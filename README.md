@@ -81,7 +81,7 @@ In order to apply the patch on the JetPack sources with Orin Nano and Nano suppo
 ```
 SENSOR_ID=0 # 0 for CAM0 port
 FRAMERATE=14 # Framerate can go from 2 to 14 for 4608x2592 mode
-gst-launch-1.0 nvarguscamerasrc sensor-id=$SENSOR_ID ! "video/x-raw(memory:NVMM),width=4608,height=2592,framerate=$FRAMERATE/1" ! queue ! nv3dsink
+gst-launch-1.0 nvarguscamerasrc sensor-id=$SENSOR_ID ! "video/x-raw(memory:NVMM),width=4608,height=2592,framerate=$FRAMERATE/1" ! queue ! nvegltransform ! nveglglessink 
 ```
 
 
