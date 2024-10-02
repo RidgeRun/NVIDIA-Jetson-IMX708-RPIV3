@@ -37,6 +37,8 @@ There are two options to install the driver:
 
 ### OPTION A: Installing the kernel and dtb debians (Recommended)
 
+**Note:** JetPack 6.0 is not supported using this method.
+
 This is the easiest and fastest way to install the driver. In order to install the debian packages you just need to perform the following instructions:
 
 * [Installing debians](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Installing_the_Driver_-_Option_A:_Debian_Packages_.28Recommended.29)
