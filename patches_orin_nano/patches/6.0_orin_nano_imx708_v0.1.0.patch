@@ -1,7 +1,13 @@
-From 6e8778ad0b79cbc1268784f5c4e373496a11068b Mon Sep 17 00:00:00 2001
+From 249edacf088c14cc613cdd9653afbfe0d53202d3 Mon Sep 17 00:00:00 2001
 From: David_M <david.monge@ridgerun.com>
-Date: Tue, 1 Oct 2024 12:22:59 -0600
+Date: Wed, 2 Oct 2024 18:05:05 -0600
 Subject: [PATCH] Squashed commit of the following:
+
+commit cc7210a7c0ef808409681b79358b4b0eee892d8b
+Author: David_M <david.monge@ridgerun.com>
+Date:   Wed Oct 2 18:04:41 2024 -0600
+
+    Delete unused data from the device tree
 
 commit 9374d3ac41796ef8965d8f65cc0efefd3ed267b2
 Author: David_M <david.monge@ridgerun.com>
@@ -51,16 +57,16 @@ Date:   Mon Sep 30 17:28:24 2024 -0600
 
     Add dtsi files
 ---
- .../tegra234-camera-rpicam3-imx708.dtsi       | 284 +++++++
+ .../tegra234-camera-rpicam3-imx708.dtsi       | 278 +++++++
  ...tegra234-p3768-0000+p3767-0000-dynamic.dts |   2 +-
- .../tegra234-p3768-camera-rpicam3-imx708.dtsi |  72 ++
+ .../tegra234-p3768-camera-rpicam3-imx708.dtsi |  69 ++
  .../arch/arm64/configs/defconfig              |   1 +
  .../drivers/media/i2c/Kconfig                 |   9 +
  nvidia-oot/drivers/media/i2c/Makefile         |   1 +
  .../drivers/media/i2c/imx708_mode_tbls.h      | 222 +++++
  nvidia-oot/drivers/media/i2c/nv_imx708.c      | 773 ++++++++++++++++++
  nvidia-oot/include/media/imx708.h             |  53 ++
- 9 files changed, 1416 insertions(+), 1 deletion(-)
+ 9 files changed, 1407 insertions(+), 1 deletion(-)
  create mode 100644 hardware/nvidia/t23x/nv-public/overlay/tegra234-camera-rpicam3-imx708.dtsi
  create mode 100644 hardware/nvidia/t23x/nv-public/overlay/tegra234-p3768-camera-rpicam3-imx708.dtsi
  create mode 100644 nvidia-oot/drivers/media/i2c/imx708_mode_tbls.h
@@ -69,10 +75,10 @@ Date:   Mon Sep 30 17:28:24 2024 -0600
 
 diff --git a/hardware/nvidia/t23x/nv-public/overlay/tegra234-camera-rpicam3-imx708.dtsi b/hardware/nvidia/t23x/nv-public/overlay/tegra234-camera-rpicam3-imx708.dtsi
 new file mode 100644
-index 000000000..5381c7c8c
+index 000000000..1438d2515
 --- /dev/null
 +++ b/hardware/nvidia/t23x/nv-public/overlay/tegra234-camera-rpicam3-imx708.dtsi
-@@ -0,0 +1,284 @@
+@@ -0,0 +1,278 @@
 +/*
 + * Copyright (c) 2022-2023, NVIDIA CORPORATION.  All rights reserved.
 + * Copyright (c) 2023, RidgeRun <support@ridgerun.com>. All rights reserved
@@ -333,10 +339,7 @@ index 000000000..5381c7c8c
 +						position = "front";
 +						orientation = "1";
 +						cam_module0_drivernode0: drivernode0 {
-+							//status = "okay";
 +							pcl_id = "v4l2_sensor";
-+							//devname = "imx708 9-001a";
-+							//proc-device-tree = "/proc/device-tree/bus@0/cam_i2cmux/i2c@0/rpicam3_imx708_a@1a";
 +							sysfs-device-tree = "/sys/firmware/devicetree/base/bus@0/cam_i2cmux/i2c@0/rpicam3_imx708_a@1a";
 +						};
 +					};
@@ -345,10 +348,7 @@ index 000000000..5381c7c8c
 +						position = "rear";
 +						orientation = "1";
 +						cam_module1_drivernode0: drivernode0 {
-+							//status = "okay";
 +							pcl_id = "v4l2_sensor";
-+							//devname = "imx708 10-001a";
-+							//proc-device-tree = "/proc/device-tree/bus@0/cam_i2cmux/i2c@1/rpicam3_imx708_c@1a";
 +							sysfs-device-tree = "/sys/firmware/devicetree/base/bus@0/cam_i2cmux/i2c@1/rpicam3_imx708_c@1a";
 +						};
 +					};
@@ -372,10 +372,10 @@ index b9fed3958..3350ae3df 100644
  	overlay-name = "Tegra234 p3768-0000+p3767-xxxx Dynamic Overlay";
 diff --git a/hardware/nvidia/t23x/nv-public/overlay/tegra234-p3768-camera-rpicam3-imx708.dtsi b/hardware/nvidia/t23x/nv-public/overlay/tegra234-p3768-camera-rpicam3-imx708.dtsi
 new file mode 100644
-index 000000000..e206bbb94
+index 000000000..2cf415df9
 --- /dev/null
 +++ b/hardware/nvidia/t23x/nv-public/overlay/tegra234-p3768-camera-rpicam3-imx708.dtsi
-@@ -0,0 +1,72 @@
+@@ -0,0 +1,69 @@
 +/*
 + * Copyright (c) 2022, NVIDIA CORPORATION.  All rights reserved.
 + * Copyright (c) 2023, RidgeRun.  All rights reserved.
@@ -415,7 +415,6 @@ index 000000000..e206bbb94
 +					mux-gpios = <&gpio_aon CAM_I2C_MUX GPIO_ACTIVE_HIGH>;
 +					i2c-parent = <&cam_i2c>;
 +					i2c@0 {
-+						//status = "okay";
 +						reg = <0>;
 +						#address-cells = <1>;
 +						#size-cells = <0>;
@@ -438,8 +437,6 @@ index 000000000..e206bbb94
 +					camera-control-output-low {
 +						gpio-hog;
 +						output-low;
-+						//gpios = <CAM0_PWDN 0 CAM1_PWDN 0>;
-+						//label = "cam0-pwdn","cam1-pwdn";
 +						gpios = <CAM0_RST 0>;
 +						label = "cam0-rst";
 +					};
