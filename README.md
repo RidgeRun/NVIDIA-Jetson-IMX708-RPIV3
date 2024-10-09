@@ -10,20 +10,23 @@ Supports the following Jetson platforms:
 In this repository you will find the following structure:
 ```
 .
-├── patches_orin_nano
-|   └── patches
-│       ├── 5.1.1_orin_nano_imx708-v0.1.0.patch
-│       └── series
 ├── patches_nano
-|   └── patches
-│       ├── 4.6.4_nano_imx708-v0.1.0.patch
+│   └── patches
+│       ├── 4.6.4_nano_imx708_v0.1.0.patch
+│       └── series
+├── patches_orin_nano
+│   └── patches
+│       ├── 5.1.1_nano_imx708_v0.1.0.patch
+│       ├── 6.0_orin_nano_imx708_v0.1.0.patch
 │       └── series
 └── README.md
 ```
 where:
 
-* `5.1.1_*_imx708-v0.1.0.patch` is the patch to be applied on the JetPack 5.1.1 sources in order to add support for the IMX708 camera sensor in the Jetson Orin Nano.
-* `series` is a file containing the patch name in order to apply it by using the quilt tool. The same applies to '4.6.4_nano_imx708-v0.1.0.patch'.
+* `5.1.1_nano_imx708-v0.1.0.patch` is the patch to be applied on the JetPack 5.1.1 sources in order to add support for the IMX708 camera sensor in the Jetson Orin Nano.
+* `6.0_orin_nano_imx708-v0.1.0.patch` is the patch to be applied on the JetPack 6.0 sources in order to add support for the IMX708 camera sensor in the Jetson Orin Nano.
+* `4.6.4_nano_imx708-v0.1.0.patch` is the patch to be applied on the JetPack 4.6.4 sources in order to add support for the IMX708 camera sensor in the Jetson Nano.
+* `series` is a file containing the patch name in order to apply it by using the quilt tool. JetPack 6.0 patch uses git to apply the patch.
 
 ## JetPack installation instructions
 
@@ -36,6 +39,8 @@ You can download and install the JetPack by following the instructions below:
 There are two options to install the driver:
 
 ### OPTION A: Installing the kernel and dtb debians (Recommended)
+
+**Note:** JetPack 6.0 is not supported using this method.
 
 This is the easiest and fastest way to install the driver. In order to install the debian packages you just need to perform the following instructions:
 
