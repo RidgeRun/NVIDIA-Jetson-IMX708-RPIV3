@@ -4,7 +4,6 @@ Date: Wed, 2 Sep 2026 08:57:44 -0600
 Subject: [PATCH] Add IMX708 driver
 
 ---
- env.sh                                        |   6 +
  .../nvidia/t23x/nv-public/overlay/Makefile    |   1 +
  .../tegra234-p3768-camera-rpicam3-imx708.dts  | 315 +++++++
  .../kernel-noble/arch/arm64/configs/defconfig |   1 +
@@ -14,24 +13,11 @@ Subject: [PATCH] Add IMX708 driver
  nvidia-oot/drivers/media/i2c/nv_imx708.c      | 783 ++++++++++++++++++
  nvidia-oot/include/media/imx708.h             |  53 ++
  9 files changed, 1391 insertions(+)
- create mode 100644 env.sh
  create mode 100644 hardware/nvidia/t23x/nv-public/overlay/tegra234-p3768-camera-rpicam3-imx708.dts
  create mode 100644 nvidia-oot/drivers/media/i2c/imx708_mode_tbls.h
  create mode 100644 nvidia-oot/drivers/media/i2c/nv_imx708.c
  create mode 100644 nvidia-oot/include/media/imx708.h
 
-diff --git a/env.sh b/env.sh
-new file mode 100644
-index 000000000..95bcf1382
---- /dev/null
-+++ b/env.sh
-@@ -0,0 +1,6 @@
-+export CROSS_COMPILE=$HOME/l4t-gcc/x-tools/aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu-
-+export BASE_PATH=/home/anavarro/customers/rr/orin-drivers/
-+export INSTALL_MOD_PATH=$BASE_PATH/out/rootfs/
-+export KERNEL_HEADERS=$BASE_PATH/kernel/kernel-noble
-+export kernel_name=noble
-+
 diff --git a/hardware/nvidia/t23x/nv-public/overlay/Makefile b/hardware/nvidia/t23x/nv-public/overlay/Makefile
 index 5750473c4..0c5b25358 100644
 --- a/hardware/nvidia/t23x/nv-public/overlay/Makefile
