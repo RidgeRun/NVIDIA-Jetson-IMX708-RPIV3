@@ -10,6 +10,7 @@ Supports the following Jetson platforms:
 In this repository you will find the following structure:
 ```
 .
+├── imx708.nito
 ├── patches_nano
 │   └── patches
 │       ├── 4.6.4_nano_imx708_v0.1.0.patch
@@ -18,15 +19,19 @@ In this repository you will find the following structure:
 │   └── patches
 │       ├── 5.1.1_nano_imx708_v0.1.0.patch
 │       ├── 6.0_orin_nano_imx708_v0.1.0.patch
+│       ├── 7.2.1_orin_nano_imx708_v0.1.0.patch
 │       └── series
 └── README.md
 ```
 where:
 
+* `imx708.nito` is the NITO file required for argus capture in JetPack 7.2+
+
 * `5.1.1_nano_imx708-v0.1.0.patch` is the patch to be applied on the JetPack 5.1.1 sources in order to add support for the IMX708 camera sensor in the Jetson Orin Nano.
 * `6.0_orin_nano_imx708-v0.1.0.patch` is the patch to be applied on the JetPack 6.0 sources in order to add support for the IMX708 camera sensor in the Jetson Orin Nano.
+* `7.2.1_orin_nano_imx708_v0.1.0.patch` is the patch to be applied on the JetPack 7.2.1 sources in order to add support for the IMX708 camera sensor in the Jetson Orin Nano.
 * `4.6.4_nano_imx708-v0.1.0.patch` is the patch to be applied on the JetPack 4.6.4 sources in order to add support for the IMX708 camera sensor in the Jetson Nano.
-* `series` is a file containing the patch name in order to apply it by using the quilt tool. JetPack 6.0 patch uses git to apply the patch.
+* `series` is a file containing the patch name in order to apply it by using the quilt tool. The Orin Nano `series` file selects the JetPack 5.1.1 patch. Apply the JetPack 6.0+ patches individually using Git.
 
 ## JetPack installation instructions
 
@@ -40,7 +45,7 @@ There are two options to install the driver:
 
 ### OPTION A: Installing the kernel and dtb debians (Recommended)
 
-**Note:** JetPack 6.0 is not supported using this method.
+**Note:** JetPack 6.0+ is not supported using this method.
 
 This is the easiest and fastest way to install the driver. In order to install the debian packages you just need to perform the following instructions:
 
